@@ -1,0 +1,21 @@
+<div *ngIf="user" fxLayout="row" fxLayout.xs="column" fxFlex="1 0 auto">
+  <mat-card class="container">
+    <mat-card-header fxLayoutAlign="space-between center">
+      <mat-card-title>{{user.name}}</mat-card-title>
+      <mat-card-subtitle>{{user.jobTitle}}</mat-card-subtitle>
+      <mat-card-actions>
+        <button mat-icone-button>
+          <mat-icon routerLink="edit">edit</mat-icon>
+        </button>
+        <button mat-icone-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icone-button>
+          <mat-icon routerLink="posts">message</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card-header>
+    <img mat-card-image [src]="user.image" alt="user.name">
+  </mat-card>
+  <router-outlet></router-outlet>
+</div>
